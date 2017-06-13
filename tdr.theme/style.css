@@ -97,6 +97,11 @@ fieldset {
 	float: right;
 }
 
+#wpadminbar li#wp-admin-bar-wp-logo {
+	display: none;
+}
+
+
 .widget_display_topics .bbp-forum-title {
 	display: block;
 }
