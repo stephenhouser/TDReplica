@@ -92,17 +92,17 @@ fieldset {
     margin-right: inherit;
 }
 
-#wpadminbar li#wp-admin-bar-bp-login,
-#wpadminbar li#wp-admin-bar-bp-register {
+#wpadminbar #wp-admin-bar-bp-login,
+#wpadminbar #wp-admin-bar-bp-register {
 	float: right;
 }
 
-#wpadminbar li#wp-admin-bar-wp-logo,
-#wpadminbar li#wp-admin-bar-search,
-#wpadminbar li#wp-admin-bar-customize,
-#wpadminbar li#wp-admin-bar-comments,
-#wpadminbar li#wp-admin-bar-new-content,
-#wpadminbar li#wp-admin-bar-edit {
+#wpadminbar #wp-admin-bar-wp-logo,
+#wpadminbar #wp-admin-bar-search,
+#wpadminbar #wp-admin-bar-customize,
+#wpadminbar #wp-admin-bar-comments,
+#wpadminbar #wp-admin-bar-new-content,
+#wpadminbar #wp-admin-bar-edit {
 	display: none;
 }
 
