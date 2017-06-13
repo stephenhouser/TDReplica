@@ -97,7 +97,12 @@ fieldset {
 	float: right;
 }
 
-#wpadminbar li#wp-admin-bar-wp-logo {
+#wpadminbar li#wp-admin-bar-wp-logo,
+#wpadminbar li#wp-admin-bar-search,
+#wpadminbar li#wp-admin-bar-customize,
+#wpadminbar li#wp-admin-bar-comments,
+#wpadminbar li#wp-admin-bar-new-content,
+#wpadminbar li#wp-admin-bar-edit {
 	display: none;
 }
 
