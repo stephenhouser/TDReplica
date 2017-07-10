@@ -17,14 +17,6 @@ function my_theme_enqueue_styles() {
     );
 }
 add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles' );
-/*
-function theme_enqueue_styles() {
-    wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
-
-}
-
-add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
-*/
 
 /* 
  * Only show the admin bar when logged in
@@ -43,7 +35,7 @@ add_action( 'wp_before_admin_bar_render', 'mytheme_admin_bar_render' );
 /* 
  * Add MG Safety Fast logo to login screen 
  */
-function my_login_logo() { 
+function tdreplica_login_logo() { 
 ?>
     <style type="text/css">
         .login h1 a {
@@ -53,7 +45,22 @@ function my_login_logo() {
     </style>
 <?php 
 }
-add_action( 'login_enqueue_scripts', 'my_login_logo' );
+add_action( 'login_enqueue_scripts', 'tdreplica_login_logo' );
+
+//* Add custom message to WordPress login page
+function tdreplica_login_message( $message ) {
+    if ( empty($message) ){
+        //return "<p><strong>Welcome to SmallEnvelop. Please login to continue</strong></p>";
+        return "<p align=\"center\"><strong>If you have not logged in since June 2016 your
+        password will not work.</strong>
+        <br/>
+        Use <a href=\"/wp-login.php?action=lostpassword\">Lost your password</a> to set a new one.</p>";
+    } else {
+        return $message;
+    }
+}
+
+add_filter( 'login_message', 'tdreplica_login_message' );
 
 /*
  * Add @mentionname after bbpress forum author details
