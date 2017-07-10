@@ -210,6 +210,17 @@ a.bbp-author-name {
 	}
 }
 
+/* Move "subscribe" to right side of display */
+.subscription-toggle {
+	float: right;
+}
+
+/* Move "mark as read" from the bbpress pencil unread to right side of display */
+.bbppu-mark-as-read {
+	float: right;
+	margin-right: 0.5em;
+}
+
 #buddypress .standard-form input[type=text],
 #buddypress .standard-form input[type=password],
 #buddypress .standard-form input[type=email],
