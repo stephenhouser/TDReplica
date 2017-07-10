@@ -187,22 +187,38 @@ fieldset {
 }
 */
 
-#bbpress-forums {
-	font-size: inherit /*12px */;
-}
-
 /* override forum list default 11pt font so it's readable */
-#bbpress-forums .bbp-forums-list li {
-	font-size: 100%;
-	display: block;
-}
-
+#bbpress-forums,
 #bbpress-forums ul.bbp-lead-topic,
 #bbpress-forums ul.bbp-topics,
 #bbpress-forums ul.bbp-forums,
 #bbpress-forums ul.bbp-replies,
-#bbpress-forums ul.bbp-search-results {
+#bbpress-forums ul.bbp-search-results,
+#bbpress-forums div.bbp-breadcrumb,
+#bbpress-forums div.bbp-topic-tags,
+#bbpress-forums div.bbp-the-content-wrapper textarea.bbp-the-content,
+#bbpress-forums div.bbp-the-content-wrapper input,
+#bbpress-forums div.bbp-template-notice p,
+#bbpress-forums div.bbp-reply-author .bbp-author-role,
+#bbpress-forums div.bbp-forum-info .bbp-forum-content,
+#bbpress-forums #bbp-your-profile fieldset span.description {
 	font-size: inherit /*12px */;
+}
+
+#bbpress-forums p.bbp-topic-meta {
+	font-size: 0.85em;
+}
+
+/*
+.bbp-topic-permalink,
+.bbp-forum-title {
+	font-size: 1.125em;
+}
+*/
+
+#bbpress-forums .bbp-forums-list li {
+	font-size: 100%;
+	display: block;
 }
 
 a.bbp-author-name {
@@ -215,7 +231,6 @@ a.bbp-author-name {
 	width: 70%;
 	margin-left: auto;
 	margin-right: auto;
-	
 	border: 1px solid #ddd;
 	background-color: #eee;
 }
@@ -232,39 +247,15 @@ a.bbp-author-name {
 	display: none;
 }
 
-div.bbp-breadcrumb,
-div.bbp-topic-tags,
-#bbpress-forums div.bbp-the-content-wrapper textarea.bbp-the-content,
-#bbpress-forums div.bbp-the-content-wrapper input,
-#bbpress-forums #bbp-your-profile fieldset span.description,
-div.bbp-template-notice p,
-#bbpress-forums div.bbp-reply-author .bbp-author-role,
-#bbpress-forums .bbp-forum-info .bbp-forum-content {
-	font-size: inherit /*12px */;
-}
-
-#bbpress-forums p.bbp-topic-meta {
-	font-size: 0.75em;
-}
-
-/*
-.bbp-topic-permalink,
-.bbp-forum-title {
-	font-size: 1.125em;
-}
-*/
-
 /* Move "mark as read" from the bbpress pencil unread to right side of display */
 .bbppu-mark-as-read {
 	float: right;
 	margin-right: 0.5em;
 }
-
 /* END: bbPress Overrides */
 
 /* START: Custom Accent Colors */
-/* removes need for fourteen colors plugin */
-
+/* NOTE: This code removes need for fourteen colors plugin */
 /* Custom Contrast Color */
 .site:before,
 #secondary,
