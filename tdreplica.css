@@ -1,0 +1,593 @@
+/*
+Theme Name: TDReplica Car Club Theme
+Theme URI: https://github.com/stephenhouser/tdreplica-
+Author: Stephen Houser
+Author URI: http://stephenhouser.com
+Description: Theme for the TDReplica Car Club site.
+Version: 1.0.1
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: black, green, white, light, dark, two-columns, three-columns, left-sidebar, right-sidebar, fixed-layout, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready, accessibility-ready
+Template: twentyfourteen
+Text Domain: tdreplica
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+/*
+Accent Color: #8b0000
+Contrast Color: #014225
+Background Color: #f5f5f5
+*/
+
+fieldset {
+	border: none;
+}
+
+.content-area {
+	padding-top: 1em;
+}
+
+.site-content .entry-header,
+.site-content .entry-content,
+.site-content .entry-summary,
+.site-content .entry-meta,
+.page-content {
+	max-width: 100%;
+}
+
+.post-navigation,
+.image-navigation {
+	max-width: 100%;
+}
+
+.archive-header,
+.page-header {
+	max-width: 100%;
+}
+
+.contributor-info {
+	max-width: 100%;
+}
+
+.comments-area {
+	max-width: 100%;
+}
+
+.site-main .mu_register,
+.widecolumn > h2,
+.widecolumn > form {
+	max-width: 100%;
+}
+
+@media screen and (min-width: 846px) {
+	.content-area,
+	.content-sidebar {
+		padding-top: 1em;
+	}
+}
+
+.home-page .entry-header {
+    display: none;
+}
+
+.entry-header {
+    text-align: center;
+}
+
+.entry-title {
+	text-align: center;
+}
+
+.gallery-item {
+	float: none;
+	display: inline-block;
+}
+
+.gallery {
+	text-align: center;
+ 
+}
+
+.full-width .site-content blockquote.alignright,
+	.full-width .site-content img.size-full.alignright,
+	.full-width .site-content img.size-large.alignright,
+	.full-width .site-content img.size-medium.alignright,
+	.full-width .site-content .wp-caption.alignright {
+    margin-right: inherit;
+}
+
+#wpadminbar #wp-admin-bar-bp-login,
+#wpadminbar #wp-admin-bar-bp-register {
+	float: right;
+}
+
+#wpadminbar #wp-admin-bar-wp-logo,
+#wpadminbar #wp-admin-bar-search,
+#wpadminbar #wp-admin-bar-customize,
+#wpadminbar #wp-admin-bar-comments,
+#wpadminbar #wp-admin-bar-new-content,
+#wpadminbar #wp-admin-bar-edit {
+	display: none;
+}
+
+.widget_display_topics .bbp-forum-title {
+	display: block;
+}
+
+.widget_display_topics li {
+	margin-bottom: 1em;
+}
+
+/* Simple two column layout. */
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.two-column div {
+    width: 47%;
+}
+
+.two-column h2 {
+    width: 100%;
+    border-bottom: 1px solid grey;
+    margin-bottom: 0.25em;
+}
+
+.two-column:after {
+    content: " ";
+    height: 0;
+    display: block;
+    clear: both;
+}
+
+/* Switch to single column when screen is less than 500px wide */
+@media only screen and (max-width: 640px) {
+    .two-column .left, .two-column .right {
+        float: none;
+        width: auto;
+    }
+}
+
+@media screen and (max-width:782px) {
+	#wp-toolbar > ul > li, #wpadminbar #wp-admin-bar-user-actions.ab-submenu img.avatar {
+        	display: list-item;
+    	}
+
+	#wpadminbar .quicklinks > ul > li > a {
+		padding: 0 4px 0 3px;
+	}
+}
+
+/* Move "subscribe" to right side of display */
+.subscription-toggle {
+	float: right;
+}
+
+/* START: BuddyPress Styles */
+#buddypress .standard-form input[type=text],
+#buddypress .standard-form input[type=password],
+#buddypress .standard-form input[type=email],
+#buddypress .standard-form select {
+	width: 90%;
+}
+/* END: BuddyPress Styles */
+
+/* START: bbPress Overrides */
+
+/* Hide closed topics */
+/*
+.bbp-topics ul.status-closed {
+	display:none;
+}
+*/
+
+#bbpress-forums {
+	font-size: inherit /*12px */;
+}
+
+/* override forum list default 11pt font so it's readable */
+#bbpress-forums .bbp-forums-list li {
+	font-size: 100%;
+	display: block;
+}
+
+#bbpress-forums ul.bbp-lead-topic,
+#bbpress-forums ul.bbp-topics,
+#bbpress-forums ul.bbp-forums,
+#bbpress-forums ul.bbp-replies,
+#bbpress-forums ul.bbp-search-results {
+	font-size: inherit /*12px */;
+}
+
+a.bbp-author-name {
+	text-decoration: none;
+	word-wrap: break-word;
+	font-size: 100%; /*90%;*/
+}
+
+.bbp-author-role {
+	width: 70%;
+	margin-left: auto;
+	margin-right: auto;
+	
+	border: 1px solid #ddd;
+	background-color: #eee;
+}
+
+.bbp-user-nicename {
+	font-weight: bold;
+	color: #888;
+	display: inline-block;
+	margin: 0;
+	font-size: 80%;
+}
+
+.bbp-reply-ip {
+	display: none;
+}
+
+div.bbp-breadcrumb,
+div.bbp-topic-tags,
+#bbpress-forums div.bbp-the-content-wrapper textarea.bbp-the-content,
+#bbpress-forums div.bbp-the-content-wrapper input,
+#bbpress-forums #bbp-your-profile fieldset span.description,
+div.bbp-template-notice p,
+#bbpress-forums div.bbp-reply-author .bbp-author-role,
+#bbpress-forums .bbp-forum-info .bbp-forum-content {
+	font-size: inherit /*12px */;
+}
+
+#bbpress-forums p.bbp-topic-meta {
+	font-size: 0.75em;
+}
+
+/*
+.bbp-topic-permalink,
+.bbp-forum-title {
+	font-size: 1.125em;
+}
+*/
+
+/* Move "mark as read" from the bbpress pencil unread to right side of display */
+.bbppu-mark-as-read {
+	float: right;
+	margin-right: 0.5em;
+}
+
+/* END: bbPress Overrides */
+
+/* START: Custom Accent Colors */
+/* removes need for fourteen colors plugin */
+
+/* Custom Contrast Color */
+.site:before,
+#secondary,
+.site-header,
+.site-footer,
+.menu-toggle,
+.featured-content,
+.featured-content .entry-header,
+.slider-direction-nav a,
+.ie8 .featured-content,
+.ie8 .site:before {
+	background-color: #014225;
+}
+
+.grid .featured-content .entry-header,
+.ie8 .grid .featured-content .entry-header {
+	border-color: #014225;
+}
+
+.slider-control-paging a:before {
+	background-color: rgba(255,255,255,.33);
+}
+
+.hentry .mejs-mediaelement,
+.hentry .mejs-container .mejs-controls {
+	background: #014225;
+}
+
+.content-sidebar .widget_twentyfourteen_ephemera .widget-title:before {
+	background: #014225;
+}
+
+.paging-navigation,
+.content-sidebar .widget .widget-title {
+	border-top-color: #014225;
+}
+
+.content-sidebar .widget .widget-title,
+.content-sidebar .widget .widget-title a,
+.paging-navigation,
+.paging-navigation a:hover,
+.paging-navigation a {
+	color: #014225;
+}
+
+/* Override the site title color option with an over-qualified selector, as the option is hidden. */
+h1.site-title a {
+	color: #fff;
+}
+
+.menu-toggle:active,
+.menu-toggle:focus,
+.menu-toggle:hover {
+	background-color: #458669;
+}
+/* Custom accent color. */
+button,
+.button,
+.contributor-posts-link,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+.search-toggle,
+.hentry .mejs-controls .mejs-time-rail .mejs-time-current,
+.hentry .mejs-overlay:hover .mejs-overlay-button,
+.widget button,
+.widget .button,
+.widget input[type="button"],
+.widget input[type="reset"],
+.widget input[type="submit"],
+.widget_calendar tbody a,
+.content-sidebar .widget input[type="button"],
+.content-sidebar .widget input[type="reset"],
+.content-sidebar .widget input[type="submit"],
+.slider-control-paging .slider-active:before,
+.slider-control-paging .slider-active:hover:before,
+.slider-direction-nav a:hover,
+.ie8 .primary-navigation ul ul,
+.ie8 .secondary-navigation ul ul,
+.ie8 .primary-navigation li:hover > a,
+.ie8 .primary-navigation li.focus > a,
+.ie8 .secondary-navigation li:hover > a,
+.ie8 .secondary-navigation li.focus > a {
+	background-color: #8b0000;
+}
+
+.site-navigation a:hover {
+	color: #8b0000;
+}
+
+::-moz-selection {
+	background: #8b0000;
+}
+
+::selection {
+	background: #8b0000;
+}
+
+.paging-navigation .page-numbers.current {
+	border-color: #8b0000;
+}
+
+@media screen and (min-width: 782px) {
+	.primary-navigation li:hover > a,
+	.primary-navigation li.focus > a,
+	.primary-navigation ul ul {
+		background-color: #8b0000;
+	}
+}
+
+@media screen and (min-width: 1008px) {
+	.secondary-navigation li:hover > a,
+	.secondary-navigation li.focus > a,
+	.secondary-navigation ul ul {
+		background-color: #8b0000;
+	}
+}
+
+.contributor-posts-link,
+button,
+.button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+.search-toggle:before,
+.hentry .mejs-overlay:hover .mejs-overlay-button,
+.widget button,
+.widget .button,
+.widget input[type="button"],
+.widget input[type="reset"],
+.widget input[type="submit"],
+.widget_calendar tbody a,
+.widget_calendar tbody a:hover,
+.site-footer .widget_calendar tbody a,
+.content-sidebar .widget input[type="button"],
+.content-sidebar .widget input[type="reset"],
+.content-sidebar .widget input[type="submit"],
+button:hover,
+button:focus,
+.button:hover,
+.button:focus,
+.widget a.button:hover,
+.widget a.button:focus,
+.widget a.button:active,
+.content-sidebar .widget a.button,
+.content-sidebar .widget a.button:hover,
+.content-sidebar .widget a.button:focus,
+.content-sidebar .widget a.button:active,
+.contributor-posts-link:hover,
+.contributor-posts-link:active,
+input[type="button"]:hover,
+input[type="button"]:focus,
+input[type="reset"]:hover,
+input[type="reset"]:focus,
+input[type="submit"]:hover,
+input[type="submit"]:focus,
+.slider-direction-nav a:hover:before {
+	color: #fff;
+}
+
+@media screen and (min-width: 782px) {
+	.primary-navigation ul ul a,
+	.primary-navigation li:hover > a,
+	.primary-navigation li.focus > a,
+	.primary-navigation ul ul {
+		color: #fff;
+	}
+}
+
+@media screen and (min-width: 1008px) {
+	.secondary-navigation ul ul a,
+	.secondary-navigation li:hover > a,
+	.secondary-navigation li.focus > a,
+	.secondary-navigation ul ul {
+		color: #fff;
+	}
+}
+
+/* Generated variants of custom accent color. */
+a,
+.content-sidebar .widget a {
+	color: #8b0000;
+}
+
+.contributor-posts-link:hover,
+.button:hover,
+.button:focus,
+.slider-control-paging a:hover:before,
+.search-toggle:hover,
+.search-toggle.active,
+.search-box,
+.widget_calendar tbody a:hover,
+button:hover,
+button:focus,
+input[type="button"]:hover,
+input[type="button"]:focus,
+input[type="reset"]:hover,
+input[type="reset"]:focus,
+input[type="submit"]:hover,
+input[type="submit"]:focus,
+.widget button:hover,
+.widget .button:hover,
+.widget button:focus,
+.widget .button:focus,
+.widget input[type="button"]:hover,
+.widget input[type="button"]:focus,
+.widget input[type="reset"]:hover,
+.widget input[type="reset"]:focus,
+.widget input[type="submit"]:hover,
+.widget input[type="submit"]:focus,
+.content-sidebar .widget input[type="button"]:hover,
+.content-sidebar .widget input[type="button"]:focus,
+.content-sidebar .widget input[type="reset"]:hover,
+.content-sidebar .widget input[type="reset"]:focus,
+.content-sidebar .widget input[type="submit"]:hover,
+.content-sidebar .widget input[type="submit"]:focus,
+.ie8 .primary-navigation ul ul a:hover,
+.ie8 .primary-navigation ul ul li.focus > a,
+.ie8 .secondary-navigation ul ul a:hover,
+.ie8 .secondary-navigation ul ul li.focus > a {
+	background-color: #a81d1d;
+}
+
+.featured-content a:hover,
+.featured-content .entry-title a:hover,
+.widget a:hover,
+.widget-title a:hover,
+.widget_twentyfourteen_ephemera .entry-meta a:hover,
+.hentry .mejs-controls .mejs-button button:hover,
+.site-info a:hover,
+.featured-content a:hover {
+	color: #a81d1d;
+}
+
+a:active,
+a:hover,
+.entry-title a:hover,
+.entry-meta a:hover,
+.cat-links a:hover,
+.entry-content .edit-link a:hover,
+.post-navigation a:hover,
+.image-navigation a:hover,
+.comment-author a:hover,
+.comment-list .pingback a:hover,
+.comment-list .trackback a:hover,
+.comment-metadata a:hover,
+.comment-reply-title small a:hover,
+.content-sidebar .widget a:hover,
+.content-sidebar .widget .widget-title a:hover,
+.content-sidebar .widget_twentyfourteen_ephemera .entry-meta a:hover {
+	color: #a81d1d;
+}
+
+.page-links a:hover,
+.paging-navigation a:hover {
+	border-color: #a81d1d;
+}
+
+.entry-meta .tag-links a:hover:before {
+	border-right-color: #a81d1d;
+}
+
+.page-links a:hover,
+.entry-meta .tag-links a:hover {
+	background-color: #a81d1d;
+}
+
+@media screen and (min-width: 782px) {
+	.primary-navigation ul ul a:hover,
+	.primary-navigation ul ul li.focus > a {
+		background-color: #a81d1d;
+	}
+}
+
+@media screen and (min-width: 1008px) {
+	.secondary-navigation ul ul a:hover,
+	.secondary-navigation ul ul li.focus > a {
+		background-color: #a81d1d;
+	}
+}
+
+button:active,
+.button:active,
+.contributor-posts-link:active,
+input[type="button"]:active,
+input[type="reset"]:active,
+input[type="submit"]:active,
+.widget input[type="button"]:active,
+.widget input[type="reset"]:active,
+.widget input[type="submit"]:active,
+.content-sidebar .widget input[type="button"]:active,
+.content-sidebar .widget input[type="reset"]:active,
+.content-sidebar .widget input[type="submit"]:active {
+	background-color: #bc3131;
+}
+
+.site-navigation .current_page_item > a,
+.site-navigation .current_page_ancestor > a,
+.site-navigation .current-menu-item > a,
+.site-navigation .current-menu-ancestor > a {
+	color: #bc3131;
+}
+
+/* Higher contrast Accent Color against contrast color */
+.site-navigation .current_page_item > a,
+.site-navigation .current_page_ancestor > a,
+.site-navigation .current-menu-item > a,
+.site-navigation .current-menu-ancestor > a,
+.site-navigation a:hover,
+.featured-content a:hover,
+.featured-content .entry-title a:hover,
+.widget a:hover,
+.widget-title a:hover,
+.widget_twentyfourteen_ephemera .entry-meta a:hover,
+.hentry .mejs-controls .mejs-button button:hover,
+.site-info a:hover,
+.featured-content a:hover {
+	color: #e35858;
+}
+
+.hentry .mejs-controls .mejs-time-rail .mejs-time-current,
+.slider-control-paging a:hover:before,
+.slider-control-paging .slider-active:before,
+.slider-control-paging .slider-active:hover:before {
+	background-color: #e35858;
+}
