@@ -89,6 +89,23 @@ function tdr_show_user_id_column_content($value, $column_name, $user_id) {
 }
 
 /*
+ * Include any content from Activate page onto the activate page
+ * ...I know, seems obvious but buddypress does not show it!
+ */
+add_action('bp_after_registration_confirmed', 'tdr_confirmed_text');
+function tdr_confirmed_text() {
+	$page = get_page_by_title('Activate');
+	$content = apply_filters('the_content', $page->post_content);
+	echo $content;
+}
+
+/* Activate
+If you don't see the email, please check your SPAM or Junk folder first, then feel free to drop us an email for help at webmaster@tdreplica.com and we will try to get you registered and activated. Include your chosen username in your message to speed things along.
+
+We look forward to seeing you on the forums and in our community!
+*/
+
+/*
  * Include any content from Register page onto the register page
  * ...I know, seems obvious but buddypress does not show it!
  */
@@ -99,35 +116,16 @@ function tdr_registration_text() {
 	echo $content;
 }
 
-/*
- * Add a secret invitation code to the register page.
- * This is to help prevent spammers. Unless you enter the secret
- * pass phrase you cannot register as a new user.
- */
-$invitation_code = 'tdreplica';
+/* Register
+Because our primary goal is the promotion of our hobby and the enjoyment of these great cars, we **do not collect dues** or have bunch of rules to follow (safety fast after all). To become a member, we only have three simple requests:
 
-/* Add fields to the registration page, and show any errors */ 
-add_action('bp_account_details_fields', 'registration_invitation', 10);
-function registration_invitation() {
-	$invitation = (!empty($_POST['signup_invitation'])) ? sanitize_text_field($_POST['signup_invitation'] ) : '';
-	?>
-		<label for="signup_invitation">
-			<?php _e('Invitation Code', 'registration_invitation') ?> 
-			<?php _e( '(required)', 'registration_invitation' ); ?>
-		</label>		
-		<?php do_action('bp_signup_invitation_errors'); ?>
-		<input type="text" name="signup_invitation" id="signup_invitation" 
-				class="input" value="<?php echo esc_attr($invitation); ?>" size="25" />
-	<?php
-}
+1. **Help us foster an active, supportive, and family friendly environment**. Always treat everyone with dignity and respect. We are not in competition for prizes or glory.
 
-/* Validate the invitation code in Buddypress' signup process, return errors if failed */
-add_action('bp_signup_validate', 'registration_invitation_validate');
-function registration_invitation_validate() {
-	global $invitation_code;
-	$bp = buddypress();
-	if (empty($_POST['signup_invitation']) || (!empty($_POST['signup_invitation']) && trim($_POST['signup_invitation']) != $invitation_code)) {
-    	$bp->signup->errors['signup_invitation'] = __('You must include a correct invitation code.', 'registration_invitation');
-	}
-}
+2. **Share, help, and support**. If someone gives you useful advice or help, return the favor and help someone else. If not for the support and advice of others, many of these cars would never see the road.  Where past kit car manufacturers lacked support and nearly destroyed the hobby, we fill in that gap and ensure others get to enjoy the full benefit of owning a fun little car.
+
+3. **Have Fun**. We’ve received story after story about heart break and disappointment when a project doesn’t seem to work out as planned. Remain vigilant in the idea that this all about having fun and not for profit.
+
+Website hosting is a relatively inexpensive cost and all development and maintenance is done strictly on members’ own time with no compensation.
+*/
+
 ?>
