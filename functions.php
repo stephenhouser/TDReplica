@@ -97,20 +97,14 @@ function my_register_form() {
 }
 
 /*
- * Add text to the top of the user registration page
+ * Include any content from Register page onto the register page
+ * ...I know, seems obvious but buddypress does not show it!
  */
 add_action('bp_before_account_details_fields', 'registration_text');
 function registration_text() {
-	?>
-	<p>Because our primary goal is the promotion of our hobby and the enjoyment of these great cars, we DO NOT collect dues or have bunch of rules to follow. To become a member, we only have three simple requests:</p>
-	<ol>
-		<li><strong>Help us foster an active, supportive, and family friendly environment. Always treat everyone with dignity and respect.</strong> We are not in competition for prizes or glory.</li>
-		<li>If someone gives you useful advice or help, return the favor and help someone else. If not for the support and advice of others, many of these cars would never see the road. SHARE, HELP, AND SUPPORT. Where past kit car manufacturers lacked support and nearly destroyed the hobby, we fill in that gap and ensure others get to enjoy the full benefit of owning a fun little car.</li>
-		<li>HAVE FUN. We’ve received story after story about heart break and disappointment when a project doesn’t seem to work out as planned. Remain vigilant in the idea that this all about having fun and not for profit.</li>
-	</ol>
-
-	<p>All proceeds from items sold in our online shop go directly to the club fund to ensure our continued growth. Funds are used to purchase items in quantity so we can offer them at a lower price to our members. Items like Grill Badges, T-Shirts and Hats have a very high up front cost. Website hosting is a relatively inexpensive cost and all development and maintenance is done strictly on members’ own time with no compensation.</p>
-	<?php
+	$page = get_page_by_title('Register');
+	$content = apply_filters('the_content', $page->post_content);
+	echo $content;
 }
 
 add_action('bp_account_details_fields', 'registration_invitation', 10);
