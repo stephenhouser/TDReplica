@@ -117,7 +117,7 @@ add_action('bp_account_details_fields', 'registration_invitation', 10);
 function registration_invitation() {
 	$invitation = (!empty($_POST['invitation'])) ? sanitize_text_field($_POST['invitation'] ) : '';
 	?>
-	<label for="invitation"><?php _e('Invitation Code (required)', 'registration_invitation') ?> <?php _e( '(required)', 'registration_invitation' ); ?>
+	<label for="invitation"><?php _e('Invitation Code', 'registration_invitation') ?> <?php _e( '(required)', 'registration_invitation' ); ?>
 	<input type="text" name="invitation" id="invitation" class="input" value="<?php echo esc_attr($invitation); ?>" size="25" /></label>
 	<?php
 }
