@@ -148,10 +148,14 @@ a.bbp-author-name {
 /* override forum list default 11pt font so it's readable */
 #bbpress-forums {
 	font-size: inherit;
+	line-height: 1.5;
 }
 
-#bbpress-forums li,
-#bbpress-forums .bbp-forums li,
+#bbpress-forums li, 
+#bbpress-forums .bbp-forums li {
+	font-size: 12pt !important;
+}
+
 #bbpress-forums .bbp-breadcrumb,
 #bbpress-forums .bbp-topics,
 #bbpress-forums .bbp-forums-list .bbp-forum {
