@@ -99,6 +99,14 @@ function tdr_registration_text() {
 	echo $content;
 }
 
+/*
+ * Add a secret invitation code to the register page.
+ * This is to help prevent spammers. Unless you enter the secret
+ * pass phrase you cannot register as a new user.
+ */
+$invitation_code = 'tdreplica';
+
+/* Add fields to the registration page, and show any errors */ 
 add_action('bp_account_details_fields', 'registration_invitation', 10);
 function registration_invitation() {
 	$invitation = (!empty($_POST['signup_invitation'])) ? sanitize_text_field($_POST['signup_invitation'] ) : '';
@@ -108,29 +116,17 @@ function registration_invitation() {
 			<?php _e( '(required)', 'registration_invitation' ); ?>
 		</label>		
 		<?php do_action('bp_signup_invitation_errors'); ?>
-
 		<input type="text" name="signup_invitation" id="signup_invitation" 
 				class="input" value="<?php echo esc_attr($invitation); ?>" size="25" />
 	<?php
 }
 
+/* Validate the invitation code in Buddypress' signup process, return errors if failed */
 add_action('bp_signup_validate', 'registration_invitation_validate');
 function registration_invitation_validate() {
 	$bp = buddypress();
-	if (empty($_POST['signup_invitation']) || (!empty($_POST['signup_invitation']) && trim($_POST['signup_invitation']) != 'tdreplica')) {
+	if (empty($_POST['signup_invitation']) || (!empty($_POST['signup_invitation']) && trim($_POST['signup_invitation']) != $invitation_code)) {
     	$bp->signup->errors['signup_invitation'] = __('You must include a correct invitation code.', 'registration_invitation');
 	}
 }
-
-/*
-add_filter('bp_core_validate_user_signup', 'registration_invitation_validation');
-function registration_invitation_validation($result) {
-	if (empty($_POST['signup_invitation']) || (!empty($_POST['signup_invitation']) && trim($_POST['signup_invitation']) != 'tdreplica')) {
-		// $result['errors']->add('signup_invitation', __('You must include the correct registration invitation code.', 'registration_invitation'));
-		$result['errors']->add('user_name', __( 'You must include the correct registration invitation code!', 'buddypress'));
-	}
-
-	return $result;
-}
-*/
 ?>
