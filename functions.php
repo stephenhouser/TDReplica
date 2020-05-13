@@ -124,6 +124,7 @@ function registration_invitation() {
 /* Validate the invitation code in Buddypress' signup process, return errors if failed */
 add_action('bp_signup_validate', 'registration_invitation_validate');
 function registration_invitation_validate() {
+	global $invitation_code;
 	$bp = buddypress();
 	if (empty($_POST['signup_invitation']) || (!empty($_POST['signup_invitation']) && trim($_POST['signup_invitation']) != $invitation_code)) {
     	$bp->signup->errors['signup_invitation'] = __('You must include a correct invitation code.', 'registration_invitation');
