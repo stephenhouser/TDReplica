@@ -218,8 +218,11 @@ a.bbp-author-name {
 	width: 90%;
 }
 
-.register-section.wangguard {
-	width: 47% !important;
-	float: left;
-	margin-top: 0 !important;
+.invitation_code:hover .code {
+	display: inline;
+}
+
+.invitation_code .code {
+	background: pink;
+	display: none;
 }
