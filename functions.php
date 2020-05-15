@@ -8,7 +8,6 @@
  * Add local, TDReplica style.css to list of used style sheets. 
  */
 add_action('wp_enqueue_scripts', 'tdr_enqueue_styles');
-add_action('admin_enqueue_scripts', 'tdr_enqueue_styles');
 function tdr_enqueue_styles() {
     wp_enqueue_style('tdr-style', get_template_directory_uri() . '/style.css');
 }
