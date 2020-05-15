@@ -7,10 +7,20 @@
 /* 
  * Add local, TDReplica style.css to list of used style sheets. 
  */
-add_action( 'wp_enqueue_scripts', 'tdr_enqueue_styles' );
+add_action('wp_enqueue_scripts', 'tdr_enqueue_styles');
+add_action('admin_enqueue_scripts', 'tdr_enqueue_styles');
 function tdr_enqueue_styles() {
-    wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
+    wp_enqueue_style('tdr-style', get_template_directory_uri() . '/style.css');
 }
+
+/* 
+ * Add local, TDReplica admin-style.css to list of used style sheets for admin interface
+ */
+add_action('admin_enqueue_scripts', 'tdr_enqueue_admin_styles');
+function tdr_enqueue_admin_styles() {
+    wp_enqueue_style('tdr-admin-style', get_stylesheet_directory_uri() . '/admin-style.css');
+}
+
 
 /* 
  * Only show the admin bar when logged in
