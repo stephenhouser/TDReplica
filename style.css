@@ -104,6 +104,7 @@ fieldset {
 #wp-admin-bar-new-content,
 #wp-admin-bar-edit,
 #wp-admin-bar-comments,
+#wp-admin-bar-search,
 #wp-admin-bar-delete-cache {
         display: none;
 }
