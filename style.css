@@ -97,6 +97,17 @@ fieldset {
 	float: right;
 }
 
+/* Hide wordpress menus from user screens, we're a forum place */
+#wp-admin-bar-wp-logo,
+#wp-admin-bar-customize,
+#wp-admin-bar-updates,
+#wp-admin-bar-new-content,
+#wp-admin-bar-edit,
+#wp-admin-bar-comments,
+#wp-admin-bar-delete-cache {
+        display: none;
+}
+
 .widget_display_topics .bbp-forum-title {
 	display: block;
 }
